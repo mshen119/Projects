@@ -1,0 +1,49 @@
+==64928== Memcheck, a memory error detector
+==64928== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==64928== Using Valgrind-3.17.0.GIT and LibVEX; rerun with -h for copyright info
+==64928== Command: ./vaccinate data/islands.tsv
+==64928== Parent PID: 54735
+==64928== 
+--64928-- run: /usr/bin/dsymutil "./vaccinate"
+==64928== 
+==64928== HEAP SUMMARY:
+==64928==     in use at exit: 17,618 bytes in 161 blocks
+==64928==   total heap usage: 1,599 allocs, 1,438 frees, 117,182 bytes allocated
+==64928== 
+==64928== 2,048 bytes in 1 blocks are still reachable in loss record 34 of 37
+==64928==    at 0x1001FEE94: malloc (vg_replace_malloc.c:310)
+==64928==    by 0x1008B25C6: foreach_realized_class(bool ( block_pointer)(objc_class*)) (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008B2557: protocol_addProperty_nolock(property_list_t*&, char const*, objc_property_attribute_t const*, unsigned int) (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008B5FA5: _base_objc_setAssociatedObject(objc_object*, void const*, objc_object*, objc_AssociationPolicy) (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008A4B3E: class_getInstanceMethod (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x10089A875: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008AC4A3: class_rw_t::extAlloc(class_ro_t const*, bool) (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008ABFF2: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008ABFCB: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008ABFCB: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008ABFCB: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==64928==    by 0x1008989AE: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==64928== 
+==64928== 4,096 bytes in 1 blocks are still reachable in loss record 37 of 37
+==64928==    at 0x1001FEE94: malloc (vg_replace_malloc.c:310)
+==64928==    by 0x1005794BD: __smakebuf (in /usr/lib/system/libsystem_c.dylib)
+==64928==    by 0x10058CDBE: __swsetup (in /usr/lib/system/libsystem_c.dylib)
+==64928==    by 0x1005786E3: __sfvwrite (in /usr/lib/system/libsystem_c.dylib)
+==64928==    by 0x100578C95: fwrite (in /usr/lib/system/libsystem_c.dylib)
+==64928==    by 0x10000C2F0: std::__1::basic_streambuf<char, std::__1::char_traits<char> >::sputn(char const*, long) (streambuf:230)
+==64928==    by 0x10000C17E: std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char) (locale:1416)
+==64928==    by 0x10000BE62: std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) (ostream:726)
+==64928==    by 0x100028C50: std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<< <char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (ostream:1048)
+==64928==    by 0x100028BED: Validator::log(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const (Validator.cpp:85)
+==64928==    by 0x100028EF8: Validator::validate(std::__1::vector<Shipment, std::__1::allocator<Shipment> >&) (Validator.cpp:107)
+==64928==    by 0x10000216C: main (main.cpp:105)
+==64928== 
+==64928== LEAK SUMMARY:
+==64928==    definitely lost: 0 bytes in 0 blocks
+==64928==    indirectly lost: 0 bytes in 0 blocks
+==64928==      possibly lost: 0 bytes in 0 blocks
+==64928==    still reachable: 6,144 bytes in 2 blocks
+==64928==         suppressed: 11,474 bytes in 159 blocks
+==64928== 
+==64928== For lists of detected and suppressed errors, rerun with: -s
+==64928== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 5 from 5)

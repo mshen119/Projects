@@ -1,0 +1,89 @@
+==86307== Memcheck, a memory error detector
+==86307== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==86307== Using Valgrind-3.17.0.GIT and LibVEX; rerun with -h for copyright info
+==86307== Command: ./noodleshop data/simple.tsv
+==86307== Parent PID: 53407
+==86307== 
+--86307-- run: /usr/bin/dsymutil "./noodleshop"
+==86307== 
+==86307== HEAP SUMMARY:
+==86307==     in use at exit: 17,742 bytes in 163 blocks
+==86307==   total heap usage: 5,739 allocs, 5,576 frees, 4,418,118 bytes allocated
+==86307== 
+==86307== 32 bytes in 1 blocks are still reachable in loss record 14 of 39
+==86307==    at 0x100205E94: malloc (vg_replace_malloc.c:310)
+==86307==    by 0x10056271A: __Balloc_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10055F829: __rv_alloc_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10055FD2C: __dtoa (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10058724A: __vfprintf (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x1005ACE1A: __v2printf (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x100593057: _vsnprintf (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x1005930B4: vsnprintf_l (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x100584195: snprintf_l (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10021B728: std::__1::num_put<char, std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > >::do_put(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, std::__1::ios_base&, char, double) const (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x10021B5D4: std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(float) (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x100029864: Validator::validate(ServeAction const*) (Validator.cpp:219)
+==86307== 
+==86307== 36 bytes in 1 blocks are still reachable in loss record 15 of 39
+==86307==    at 0x100205E94: malloc (vg_replace_malloc.c:310)
+==86307==    by 0x10056271A: __Balloc_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x100562EFF: __d2b_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x100564944: __rvOK_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10056551A: __strtodg (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10056673B: strtof_l (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10022289E: float std::__1::__num_get_float<float>(char const*, char const*, unsigned int&) (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x1002394B6: std::__1::istreambuf_iterator<char, std::__1::char_traits<char> > std::__1::num_get<char, std::__1::istreambuf_iterator<char, std::__1::char_traits<char> > >::__do_get_floating_point<float>(std::__1::istreambuf_iterator<char, std::__1::char_traits<char> >, std::__1::istreambuf_iterator<char, std::__1::char_traits<char> >, std::__1::ios_base&, unsigned int&, float&) const (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x100230734: std::__1::basic_istream<char, std::__1::char_traits<char> >& std::__1::__input_arithmetic<float, char, std::__1::char_traits<char> >(std::__1::basic_istream<char, std::__1::char_traits<char> >&, float&) (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x100001C39: parse_orders(std::__1::basic_istream<char, std::__1::char_traits<char> >&, std::__1::vector<Noodle, std::__1::allocator<Noodle> > const&) (main.cpp:56)
+==86307==    by 0x10000260D: main (main.cpp:109)
+==86307== 
+==86307== 80 bytes in 1 blocks are still reachable in loss record 23 of 39
+==86307==    at 0x100205E94: malloc (vg_replace_malloc.c:310)
+==86307==    by 0x10056269A: __Balloc_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x100562EFF: __d2b_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x100564944: __rvOK_D2A (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10056551A: __strtodg (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10056673B: strtof_l (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10022289E: float std::__1::__num_get_float<float>(char const*, char const*, unsigned int&) (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x1002394B6: std::__1::istreambuf_iterator<char, std::__1::char_traits<char> > std::__1::num_get<char, std::__1::istreambuf_iterator<char, std::__1::char_traits<char> > >::__do_get_floating_point<float>(std::__1::istreambuf_iterator<char, std::__1::char_traits<char> >, std::__1::istreambuf_iterator<char, std::__1::char_traits<char> >, std::__1::ios_base&, unsigned int&, float&) const (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x100230734: std::__1::basic_istream<char, std::__1::char_traits<char> >& std::__1::__input_arithmetic<float, char, std::__1::char_traits<char> >(std::__1::basic_istream<char, std::__1::char_traits<char> >&, float&) (in /usr/lib/libc++.1.dylib)
+==86307==    by 0x100001C39: parse_orders(std::__1::basic_istream<char, std::__1::char_traits<char> >&, std::__1::vector<Noodle, std::__1::allocator<Noodle> > const&) (main.cpp:56)
+==86307==    by 0x10000260D: main (main.cpp:109)
+==86307== 
+==86307== 2,048 bytes in 1 blocks are still reachable in loss record 36 of 39
+==86307==    at 0x100205E94: malloc (vg_replace_malloc.c:310)
+==86307==    by 0x1008B95C6: foreach_realized_class(bool ( block_pointer)(objc_class*)) (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008B9557: protocol_addProperty_nolock(property_list_t*&, char const*, objc_property_attribute_t const*, unsigned int) (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008BCFA5: _base_objc_setAssociatedObject(objc_object*, void const*, objc_object*, objc_AssociationPolicy) (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008ABB3E: class_getInstanceMethod (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008A1875: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008B34A3: class_rw_t::extAlloc(class_ro_t const*, bool) (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008B2FF2: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008B2FCB: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008B2FCB: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x1008B2FCB: initializeNonMetaClass (in /usr/lib/libobjc.A.dylib)
+==86307==    by 0x10089F9AE: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==86307== 
+==86307== 4,096 bytes in 1 blocks are still reachable in loss record 39 of 39
+==86307==    at 0x100205E94: malloc (vg_replace_malloc.c:310)
+==86307==    by 0x1005804BD: __smakebuf (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x100593DBE: __swsetup (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10057F6E3: __sfvwrite (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10057FC95: fwrite (in /usr/lib/system/libsystem_c.dylib)
+==86307==    by 0x10000D610: std::__1::basic_streambuf<char, std::__1::char_traits<char> >::sputn(char const*, long) (streambuf:230)
+==86307==    by 0x10000D47E: std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char) (locale:1416)
+==86307==    by 0x10000D182: std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) (ostream:726)
+==86307==    by 0x10002A2F3: std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<< <std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char) (ostream:791)
+==86307==    by 0x10002A0EA: Validator::log(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) const (Validator.cpp:48)
+==86307==    by 0x10002A56E: Validator::orders(int, std::__1::vector<Order, std::__1::allocator<Order> > const&) (Validator.cpp:68)
+==86307==    by 0x1000027DB: main (main.cpp:118)
+==86307== 
+==86307== LEAK SUMMARY:
+==86307==    definitely lost: 0 bytes in 0 blocks
+==86307==    indirectly lost: 0 bytes in 0 blocks
+==86307==      possibly lost: 0 bytes in 0 blocks
+==86307==    still reachable: 6,292 bytes in 5 blocks
+==86307==         suppressed: 11,450 bytes in 158 blocks
+==86307== 
+==86307== For lists of detected and suppressed errors, rerun with: -s
+==86307== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 4 from 4)

@@ -240,33 +240,4 @@ bool is_operator(const string& input){
   }
   return false;
 }
-/*void performOperation(const string& input, MyStack* stack){
-  double leftVal,rightVal,result;
-  rightVal = stack->top();
-  stack->pop();
-  leftVal = stack->top();
-  stack->pop();
-  if(input == "+"){
-    result = leftVal + rightVal;
-  }
-  else if(input == "-"){
-    result = leftVal - rightVal;
-  }
-  else if(input == "*"){
-    result = leftVal * rightVal;
-  }
-  else if(input == "/"){
-    result = leftVal / rightVal;
-  }
-  else if(input == "^"){
-    result = pow(leftVal,rightVal);
-  }
-  else if(input == "%"){
-    result = remainder(leftVal,rightVal);
-  }
-  else if(input == "~"){
-    result = -rightVal;
-  }
-  stack->push(result);
-  cout<<"= "<<result<<endl;
-}*/
+
